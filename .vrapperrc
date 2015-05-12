@@ -1,0 +1,50 @@
+set smartindent
+set autoindent
+set ignorecase
+set smartcase
+set clipboard=unnamed
+set imd
+set noexpandtab
+
+
+nnoremap <C-a> 0
+nnoremap <C-e> :LineEnd<CR>
+nnoremap <C-f> <Right>
+nnoremap <C-b> <Left>
+nnoremap <C-u> 20<Up>
+nnoremap <C-d> 20<Down>
+
+nnoremap <CR> o<ESC>
+nnoremap U :Redo<CR>
+nnoremap mj :AddJavaDocComment<CR>
+nnoremap mi :OrganizeImports<CR>
+
+inoremap <C-o> <Esc>o
+" inoremap <C-h> <BS>
+inoremap <C-a> <Esc>0i
+inoremap <C-e> <Esc>:LineEnd<CR>a
+inoremap <C-f> <Esc><Right>a
+inoremap <C-b> <Esc>i
+inoremap <C-d> <Esc><Right>xi
+
+inoremap <C-w> <ESC>:DeletePreviousWord<CR>i
+inoremap <C-k> <Esc><Right>:DeleteLineToEnd<CR>a
+inoremap <C-u> <Esc>:DeleteLineToBeginning<CR>i
+
+inoremap <C-u> <C-g>u<C-u>
+"noremap <C-u> <C-g>u<C-u>
+"noremap <C-w> <C-g>u<C-w>
+
+vnoremap = :Format<CR>
+vnoremap * "zy:let @/ = @z<CR>n
+
+" 真真真真真真真真真
+inoremap <C-g> <Esc>
+" 真真真真真真真真真
+inoremap <C-h> <Esc>i
+" 真真真真真真真真真
+inoremap <C-l> <Esc><Right>a
+
+" 真
+" nnoremap <C-j> 5j
+vnoremap <C-j> 5j
