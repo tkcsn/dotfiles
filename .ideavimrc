@@ -1,0 +1,60 @@
+set smartindent
+set autoindent
+set ignorecase
+set smartcase
+set clipboard=unnamed
+set imd
+set noexpandtab
+set surround
+
+nnoremap <C-a> 0
+nnoremap <C-e> :LineEnd<CR>
+nnoremap <C-f> <Right>
+nnoremap <C-b> <Left>
+nnoremap <C-u> 20<Up>
+nnoremap <C-d> 20<Down>
+
+nnoremap <CR> o<ESC>
+nnoremap U :Redo<CR>
+nnoremap mj :AddJavaDocComment<CR>
+nnoremap mi :OrganizeImports<CR>
+
+inoremap <C-o> <Esc>o
+" inoremap <C-h> <BS>
+inoremap <C-a> <Esc>0i
+inoremap <C-e> <Esc>:LineEnd<CR>a
+inoremap <C-f> <Esc><Right>a
+inoremap <C-b> <Esc>i
+inoremap <C-d> <Esc><Right>xi
+
+inoremap <C-w> <ESC>:DeletePreviousWord<CR>i
+inoremap <C-k> <Esc><Right>:DeleteLineToEnd<CR>a
+inoremap <C-u> <Esc>:DeleteLineToBeginning<CR>i
+
+inoremap <C-u> <C-g>u<C-u>
+"noremap <C-u> <C-g>u<C-u>
+"noremap <C-w> <C-g>u<C-w>
+
+vnoremap = :Format<CR>
+vnoremap * "zy:let @/ = @z<CR>n
+
+inoremap <C-g> <Esc>
+inoremap <C-h> <Esc>i
+inoremap <C-l> <Esc><Right>a
+
+vnoremap <C-j> 5j
+
+" JavaDocを表示
+nnoremap K :<C-u>action QuickJavaDoc<CR>
+" インターフェイスへジャンプ
+nnoremap gjk :<C-u>action GotoDeclaration<CR>
+" 宣言へジャンプ
+nnoremap gjK :<C-u>action GotoTypeDeclaration<CR>
+" 実装クラスへジャンプ
+nnoremap gji :<C-u>action GotoImplementation<CR>
+" スーパークラスへジャンプ
+nnoremap gjs :<C-u>action GotoSuperMethod<CR>
+" テストクラスへジャンプ
+nnoremap gjt :<C-u>action GotoTest<CR>
+" 出現箇所の検索
+nnoremap <C-k> :<C-u>action ShowUsages<CR>
